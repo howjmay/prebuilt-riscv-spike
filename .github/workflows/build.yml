@@ -37,7 +37,7 @@ jobs:
           git submodule update --depth 1 --init --recursive binutils
           git clone --depth 1 https://github.com/gcc-mirror/gcc.git gcc-master
           toolchain_root_directory=$(pwd)
-          ./configure --prefix=/opt/riscv --with-gcc-src=$toolchain_root_directory/gcc-master --disable-gdb --with-cmodel=medany
+          ./configure --prefix=/opt/riscv --with-gcc-src=$toolchain_root_directory/gcc-master --disable-gdb --with-cmodel=medany --enable-multilib
           sudo make
           sudo make build-sim SIM=qemu
           
